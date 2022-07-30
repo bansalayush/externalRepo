@@ -1,4 +1,4 @@
-name: Pull From Public main 
+name: Pull From Internal develop 
 
 on: workflow_dispatch
 
