@@ -12,6 +12,8 @@ jobs:
         git status 
         git remote set-url origin https://${{ secrets.PAT }}@github.com/bansalayush/externalRepo.git
         git remote add tmp_upstream https://${{ secrets.PAT }}@github.com/bansalayush/internalRepo.git
+        git fetch tmp_upstream --quiet
+        git remote --verbose
         git push origin refs/remotes/tmp_upstream/develop:refs/heads/develop --force
 
 
