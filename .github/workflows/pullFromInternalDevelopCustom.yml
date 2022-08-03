@@ -10,9 +10,11 @@ jobs:
     - name: repo-sync
       run: |
         git status 
+        BRANCH_MAPPING = develop:develop
         echo "Resetting origin to: https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
         git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
         git remote add tmp_upstream https://${{ secrets.PAT }}@github.com/bansalayush/internalRepo.git
+        echo git push origin "refs/remotes/tmp_upstream/${BRANCH_MAPPING%%:*}:refs/heads/${BRANCH_MAPPING#*:}" --force
         git push origin refs/remotes/tmp_upstream/develop:develop%%:*:refs/heads/develop:develop#*: --force
 
 
