@@ -15,7 +15,7 @@ jobs:
         echo "working44"
         git remote add tmp_upstream https://${{ secrets.PAT }}@github.com/bansalayush/internalRepo.git
         echo "working33"
-        git fetch tmp_upstream --quiet
+        git fetch tmp_upstream
         echo "working22"
         git remote --verbose
         echo "working11"
