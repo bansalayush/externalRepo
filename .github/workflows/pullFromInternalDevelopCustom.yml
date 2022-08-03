@@ -10,10 +10,15 @@ jobs:
     - name: repo-sync
       run: |
         git status 
+        echo "working55"
         git remote set-url origin https://${{ secrets.PAT }}@github.com/bansalayush/externalRepo.git
+        echo "working44"
         git remote add tmp_upstream https://${{ secrets.PAT }}@github.com/bansalayush/internalRepo.git
+        echo "working33"
         git fetch tmp_upstream --quiet
+        echo "working22"
         git remote --verbose
+        echo "working11"
         git push origin refs/remotes/tmp_upstream/develop:refs/heads/develop --force
 
 
